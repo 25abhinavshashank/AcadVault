@@ -57,18 +57,29 @@ const LandingPage = () => (
     </div>
 
     <footer className="landing-footer">
-      <div>
-        <span className="landing-footer-brand">AcadVault</span>
-        <p>
-          Student Community &amp; Notes Sharing Platform built for cleaner knowledge sharing across
-          classes.
-        </p>
+      <div className="landing-footer-brand-block">
+        <div className="landing-footer-brand-row">
+          <span className="landing-footer-mark">AV</span>
+          <div>
+            <span className="landing-footer-brand">AcadVault</span>
+            <p>
+              A student-first workspace for notes, discussion, and shared learning across your
+              classes.
+            </p>
+          </div>
+        </div>
+
+        <div className="landing-footer-meta">
+          <span className="landing-footer-chip">Organized notes</span>
+          <span className="landing-footer-chip">Peer discussion</span>
+          <span className="landing-footer-chip">Admin moderation</span>
+        </div>
       </div>
 
-      <div className="landing-footer-links">
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/admin/login">Admin Login</Link>
+      <div className="landing-footer-cta">
+        <Link className="primary-button landing-footer-button" to="/register">
+          Start with AcadVault
+        </Link>
       </div>
     </footer>
   </section>
