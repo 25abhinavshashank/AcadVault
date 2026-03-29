@@ -127,7 +127,7 @@ npm run dev
 You can either create/reset the admin account directly:
 
 ```bash
-npm run set-admin -- "Platform Admin" admin@example.com admin123456
+npm run set-admin -- "Admin" admin@example.com admin123456
 ```
 
 Or, after creating a normal user account, promote that user to admin from the backend:
