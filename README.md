@@ -81,6 +81,7 @@ DNS_SERVERS=8.8.8.8,1.1.1.1
 JWT_SECRET=replace-with-a-strong-secret
 JWT_EXPIRE=7d
 CLIENT_URL=http://localhost:5173
+CLIENT_URLS=http://localhost:5173,https://your-frontend.vercel.app
 CLOUDINARY_CLOUD_NAME=your-cloud-name
 CLOUDINARY_API_KEY=your-api-key
 CLOUDINARY_API_SECRET=your-api-secret
@@ -92,6 +93,7 @@ For MongoDB Atlas:
 - make sure the database user in the URI is correct
 - URL-encode special characters in the password
 - if your network or proxy DNS is flaky, set `DNS_SERVERS=8.8.8.8,1.1.1.1` so Node uses public DNS
+- for deployed frontend access, set `CLIENT_URLS` to a comma-separated allowlist such as `http://localhost:5173,https://your-frontend.vercel.app`
 
 4. Start the backend:
 
