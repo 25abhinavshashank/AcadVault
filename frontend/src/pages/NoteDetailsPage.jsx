@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../api/axiosInstance";
 import useAuth from "../hooks/useAuth.js";
+import formatDisplayName from "../utils/formatDisplayName.js";
 
 const NoteDetailsPage = () => {
   const { id } = useParams();
@@ -144,7 +145,7 @@ const NoteDetailsPage = () => {
         </div>
 
         <div className="note-meta">
-          <span>Uploaded by {note.uploadedBy?.name}</span>
+          <span>Uploaded by {formatDisplayName(note.uploadedBy?.name)}</span>
           <span>{note.likes?.length || 0} likes</span>
         </div>
 
@@ -188,7 +189,7 @@ const NoteDetailsPage = () => {
             comments.map((comment) => (
               <article className="comment-card" key={comment._id}>
                 <div className="comment-header">
-                  <strong>{comment.userId?.name}</strong>
+                  <strong>{formatDisplayName(comment.userId?.name)}</strong>
                   <span className="muted">
                     {new Date(comment.createdAt).toLocaleString()}
                   </span>

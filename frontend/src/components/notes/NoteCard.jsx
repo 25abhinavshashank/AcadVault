@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import formatDisplayName from "../../utils/formatDisplayName.js";
 
 const NoteCard = ({ note, currentUserId, currentUserRole, onDelete }) => {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ const NoteCard = ({ note, currentUserId, currentUserRole, onDelete }) => {
       </div>
 
       <div className="note-meta">
-        <span>By {note.uploadedBy?.name || "Unknown"}</span>
+        <span>By {formatDisplayName(note.uploadedBy?.name)}</span>
         <span>{note.likes?.length || 0} likes</span>
       </div>
 

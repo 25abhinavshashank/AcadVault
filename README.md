@@ -1,4 +1,4 @@
-# Student Community + Notes Sharing Platform
+# AcadVault
 
 A full-stack notes sharing platform for students built with React, Node.js, Express, MongoDB, JWT authentication, Multer, and Cloudinary.
 

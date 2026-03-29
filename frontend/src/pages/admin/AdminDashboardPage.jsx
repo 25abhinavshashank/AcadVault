@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../../api/axiosInstance";
+import formatDisplayName from "../../utils/formatDisplayName.js";
 
 const AdminDashboardPage = () => {
   const [users, setUsers] = useState([]);
@@ -88,7 +89,7 @@ const AdminDashboardPage = () => {
                 <tbody>
                   {users.map((platformUser) => (
                     <tr key={platformUser._id}>
-                      <td>{platformUser.name}</td>
+                      <td>{formatDisplayName(platformUser.name)}</td>
                       <td>{platformUser.email}</td>
                       <td>{platformUser.role}</td>
                       <td>{new Date(platformUser.createdAt).toLocaleDateString()}</td>
@@ -125,7 +126,7 @@ const AdminDashboardPage = () => {
                   {notes.map((note) => (
                     <tr key={note._id}>
                       <td>{note.title}</td>
-                      <td>{note.uploadedBy?.name}</td>
+                      <td>{formatDisplayName(note.uploadedBy?.name)}</td>
                       <td>{note.likes?.length || 0}</td>
                       <td>{new Date(note.createdAt).toLocaleDateString()}</td>
                       <td>
