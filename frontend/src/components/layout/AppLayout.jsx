@@ -84,15 +84,27 @@ const AppLayout = () => {
               </span>
             </Link>
 
-            <button
-              type="button"
-              className="menu-toggle"
-              onClick={() => setIsNavOpen((current) => !current)}
-              aria-label={isNavOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={isNavOpen}
-            >
-              <MenuIcon open={isNavOpen} />
-            </button>
+            <div className="mobile-header-actions">
+              <button
+                type="button"
+                className="theme-toggle mobile-theme-toggle"
+                onClick={toggleTheme}
+                aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+              </button>
+
+              <button
+                type="button"
+                className="menu-toggle"
+                onClick={() => setIsNavOpen((current) => !current)}
+                aria-label={isNavOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isNavOpen}
+              >
+                <MenuIcon open={isNavOpen} />
+              </button>
+            </div>
           </div>
 
           <div className="topbar-actions">
@@ -128,16 +140,6 @@ const AppLayout = () => {
 
             <div className={`mobile-nav-shell ${isNavOpen ? "mobile-nav-shell-open" : ""}`}>
               <nav className="nav-links nav-links-mobile">
-                <button
-                  type="button"
-                  className="theme-toggle"
-                  onClick={toggleTheme}
-                  aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-                  title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-                >
-                  {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-                </button>
-
                 {isAuthenticated ? (
                   <>
                     <NavLink to="/dashboard">Dashboard</NavLink>

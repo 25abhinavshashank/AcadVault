@@ -288,6 +288,17 @@ h4,
     color 0.2s ease;
 }
 
+.mobile-header-actions {
+  display: none;
+  align-items: center;
+  gap: 0.55rem;
+  margin-left: auto;
+}
+
+.mobile-theme-toggle {
+  display: none;
+}
+
 .menu-toggle:hover {
   transform: translateY(-1px);
   border-color: var(--border-strong);
@@ -1059,6 +1070,10 @@ label {
     width: 100%;
   }
 
+  .mobile-header-actions {
+    display: inline-flex;
+  }
+
   .menu-toggle {
     display: inline-flex;
   }
@@ -1117,8 +1132,17 @@ label {
     border-radius: 26px;
   }
 
+  .brand-shell {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.9rem;
+    flex-wrap: nowrap;
+  }
+
   .brand {
     align-items: center;
+    flex: 1 1 auto;
     gap: 0.8rem;
     min-width: 0;
   }
@@ -1137,10 +1161,19 @@ label {
   }
 
   .topbar-subtitle {
-    font-size: 0.76rem;
+    display: none;
+  }
+
+  .mobile-theme-toggle {
+    display: inline-flex;
+    width: 2.85rem;
+    min-width: 2.85rem;
+    height: 2.85rem;
+    min-height: 2.85rem;
   }
 
   .menu-toggle {
+    align-self: flex-start;
     width: 2.85rem;
     height: 2.85rem;
   }
